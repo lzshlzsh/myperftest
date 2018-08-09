@@ -12,3 +12,5 @@ Intel(R) Core(TM) i7-3840QM CPU @ 2.80GHz
 |socket|19w/s||
 |shmat|100w/s||
 |shmdt|100w/s||
+|shmget|300w/s||
+|shmctl|250w/s||

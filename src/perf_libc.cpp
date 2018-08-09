@@ -24,7 +24,6 @@ protected:
   }
 
   int shm_id_;
-private:
   static constexpr key_t SHM_KEY_ = 0x10034;
 };
 
@@ -57,6 +56,17 @@ PERF_TEST_F(SysVShmTest, shmat_dt) {
 PERF_TEST_F(SysVShmTest, shmat) {
   shmat(this->shm_id_, NULL, SHM_RDONLY);
 }
+
 PERF_TEST_F(SysVShmTest, shmdt) {
   shmdt(NULL);
+}
+
+PERF_TEST_F(SysVShmTest, shmget) {
+  auto shm_id = shmget(SHM_KEY_, 4096, IPC_CREAT | 0644);
+  ASSERT_NE(shm_id, -1) << PERF_ABORT;
+}
+
+PERF_TEST_F(SysVShmTest, shmctl) {
+  struct shmid_ds shm_info;
+  ASSERT_NE(shmctl(shm_id_, IPC_STAT, &shm_info), -1) << PERF_ABORT;
 }

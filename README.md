@@ -14,3 +14,9 @@ Intel(R) Core(TM) i7-3840QM CPU @ 2.80GHz
 |shmdt|100w/s||
 |shmget|300w/s||
 |shmctl|250w/s||
+
+# 环境准备
+- 更新依赖库
+```
+git subtree pull -P .Makefile http://git.code.oa.com/shield_docker/Makefile.git master --squash
+```

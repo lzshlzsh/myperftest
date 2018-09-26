@@ -1,3 +1,3 @@
-NEED_AUTO_RULE := 1
+NEED_AUTO_RULE_COM := 1
 
 include ./Makefile.env

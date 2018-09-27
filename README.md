@@ -15,9 +15,12 @@ Intel(R) Core(TM) i7-3840QM CPU @ 2.80GHz
 |shmget|300w/s||
 |shmctl|250w/s||
 |random|6000w/s||
-|std::map::find|150w/s|大小60w和300w|
-|std::unordered_map::find|350w/s|大小60w和300w|
-|boost::unordered_map::find|300w/s|大小60w和300w|
+|std::map::find|150w/s|大小300w|
+|std::unordered_map::find|350w/s|大小300w|
+|boost::unordered_map::find|300w/s|大小300w|
+|std::map::update|100w/s|大小300w|
+|std::unordered_map::update|250w/s|大小300w|
+|boost::unordered_map::update|250w/s|大小300w|
 
 # 环境准备
 - 更新依赖库

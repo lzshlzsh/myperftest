@@ -8,4 +8,4 @@
 */
 #include "perf_common.h"
 
-DEFINE_uint32(container_size, 600000, "stl/boost container size");
+DEFINE_uint32(container_size, 3000000, "stl/boost container size");

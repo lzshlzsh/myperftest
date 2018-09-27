@@ -36,12 +36,14 @@ class MapTest: public testing::Test
     for (auto i = 0u; i < FLAGS_container_size; ++i) {
       map_.emplace(i, i);
     }
+    next_ = FLAGS_container_size;
   }
 
   virtual void TearDown() override {
   }
  protected:
   M map_;
+  int next_;
  private:
 };
 
@@ -64,6 +66,12 @@ TYPED_TEST(MapTest, order) {
 
 TYPED_PERF_TEST(MapTest, find) {
   this->map_.find(random());
+}
+
+TYPED_PERF_TEST(MapTest, update) {
+  this->map_.erase(this->map_.begin());
+  this->map_.emplace(this->next_, this->next_);
+  this->next_++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

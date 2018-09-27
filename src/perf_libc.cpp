@@ -2,6 +2,7 @@
 #include <sys/socket.h>
 #include <sys/shm.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include "gtestx/gtestx.h"
 
@@ -47,6 +48,11 @@ PERF_TEST(libc, close) {
   close(-1);
 }
 
+PERF_TEST(libc, random) {
+  random();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 PERF_TEST_F(SysVShmTest, shmat_dt) {
   void *addr = shmat(this->shm_id_, NULL, SHM_RDONLY);
   ASSERT_TRUE(addr != reinterpret_cast<void *>(-1)) << PERF_ABORT;
